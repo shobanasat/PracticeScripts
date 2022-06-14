@@ -16,11 +16,11 @@ public class Inheritance_Basics_Parent extends Parent {
 	}
 	public static void main(String[] args) {
 		Inheritance_Basics_Parent obj = new Inheritance_Basics_Parent ();
-		System.out.println(obj.father);
-		System.out.println(obj.mother);
+//		System.out.println(obj.father);
+//		System.out.println(obj.mother);
 		obj.parents();
-		System.out.println(obj.child1);
-		System.out.println(obj.child2);
+//		System.out.println(obj.child1);
+//		System.out.println(obj.child2);
 		obj.daughters();
 	}
 
