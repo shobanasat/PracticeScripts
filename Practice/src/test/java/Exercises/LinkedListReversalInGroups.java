@@ -22,13 +22,37 @@ public class LinkedListReversalInGroups {
 		System.out.println();
 		System.out.println("Enter the group size: ");
 		int grpSize = sc1.nextInt();
+		int initialGrpSize = grpSize;
 		
 		int iterations = size1/grpSize;
 		int remainder = size1%grpSize;
 		System.out.println(iterations);
 		System.out.println(remainder);
 		
-		int last = size1 - remainder;
+		LinkedList<Integer> list2 = new LinkedList<>();
+		if(iterations > 0) {
+		for(int i = grpSize-1;i>=0;i--) {
+			list2.add(list1.get(i));
+		}}
+		if (iterations > 1){
+			while(iterations-1 != 0) {
+				int doubleGrpSize = grpSize + initialGrpSize;
+				for(int i = doubleGrpSize-1;i>=grpSize;i--) {
+					list2.add(list1.get(i));
+				}
+				iterations = iterations - 1;
+				grpSize = grpSize + initialGrpSize;
+			}
+		}
+		
+		if(remainder != 0) {
+		for(int i = size1-1;i>size1-1-remainder;i--) {
+			list2.add(list1.get(i));
+		}}
+		
+		System.out.println("List after being reversed in groups: " + list2);
+		
+/*		int last = size1 - remainder;
 		System.out.println(last);
 		System.out.println("Reversal of last few elements which is not in groupsize: ");
 		if (remainder != 0) {
@@ -44,7 +68,7 @@ public class LinkedListReversalInGroups {
 			iterations = iterations - 1;
 		}
 	
-		System.out.println("List after being reversed in groups: " + list1);
+		System.out.println("List after being reversed in groups: " + list1);*/
 	}
 
 }
